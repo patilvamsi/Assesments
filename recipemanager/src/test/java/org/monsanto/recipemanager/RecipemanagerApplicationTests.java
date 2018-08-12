@@ -32,6 +32,7 @@ public class RecipemanagerApplicationTests {
 	public void checkGetAll() {
 		List<Recipe> recipies = rep.findAll();
 		Assert.assertFalse("Data is not retriving", recipies.isEmpty());
+		Assert.assertNotNull("Provided List is null;", recipies);
 	}
 	
 	@Test
