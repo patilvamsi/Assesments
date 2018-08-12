@@ -1,0 +1,24 @@
+<div class="md-padding" layout="column">
+		<md-card> <md-toolbar> <md-card-title>
+		<md-card-title-text style="align-items: center;">
+		<span class="md-headline" style="font-size: 30px;">Recipe
+			Manager</span></md-card-title-text> </md-card-title> </md-toolbar></md-card>
+		<div class="col-xs-12" style="min-height: fit-content;">
+			<div layout="row" layout-align="center center" class="col-xs-3">
+				<md-card style="min-width: 100%;min-height: fit-content;">
+				<md-card-content> <md-input-container>
+				<label>Select Recipe</label> <md-select ng-model="recipe" ng-change="showRecipe(recipe)"> <md-option
+					ng-repeat="recipe in recipies" ng-value="recipe">
+				{{recipe.name}} </md-option> </md-select> </md-input-container> <md-input-container> <md-button
+					style="min-width:95%" ng-click="addRecipe()" aria-label="Add"
+					class="md-raised md-primary">Add Recipe</md-button> </md-input-container> </md-card-content></md-card>
+			</div>
+			<div class="col-xs-9" layout="column"
+				layout-align="space-between center">
+				<md-card style="min-width: 100%;min-height: fit-content;">
+				<md-card-content> <ui-view><h2>Welcome to Recipe Manager</h2></ui-view> </md-card-content> </md-card>
+			</div>
+
+		</div>
+
+</div>

@@ -1,0 +1,44 @@
+<ng-form name="myForm" class="form-group">
+<h4>Recipe</h4>
+<span class="br-space"></span>
+<div layout="row" layout-align="start center">
+	<div class="col-md-3" layout="row" layout-align="end start">
+		<h5>Name<span style="color:red">*</span> :</h5>
+	</div>
+	<div class="col-md-9">
+		<input required type="text" ng-model="recipe.name" class="form-control" id="usr">
+	</div>
+</div>
+<hr class="br-space"></hr>
+<h4>Ingredients</h4>
+<span class="br-space"></span>
+<div layout="row" ng-repeat="ingredient in recipe.ingredients track by $index" layout-align="start center">
+	<div class="col-md-3" layout="row" layout-align="end start">
+		<h5> Name<span style="color:red">*</span> :</h5>
+	</div>
+	<div class="col-md-8">
+		<input required ng-model="ingredient.name" type="text" class="form-control" id="usr">
+	</div>
+	<div class="col-md-1" ng-if="$index==0">
+		<md-button ng-disabled="recipe.ingredients.length>3"
+					style="min-width:95%" ng-click="addRecipe()"
+					class="md-raised md-primary"><span class="glyphicon glyphicon-plus"></span></md-button>
+	</div>
+	<div class="col-md-1" ng-if="$index>0">
+		<md-button
+					style="min-width:95%" aria-label="del" ng-click="delRecipe(ingredient)"
+					class="md-raised md-primary"><span class="glyphicon glyphicon-trash"></span></md-button>
+	</div>
+</div>
+<div layout="row" layout-align="start center">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<md-input-container> <md-button
+					style="min-width:95%" ng-click="save()" aria-label="Add"
+					class="md-raised md-primary">Save</md-button> </md-input-container>
+
+</div>
+<div class="col-md-4"></div>
+
+</div>
+</ng-form>
