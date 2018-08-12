@@ -25,7 +25,6 @@ public class RecipemanagerApplicationTests {
 
 	@Test
 	public void contextLoads() {
-
 	}
 
 	@Test
